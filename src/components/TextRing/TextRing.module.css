@@ -1,0 +1,13 @@
+.text-ring {
+  position: relative;
+  font-size: 2rem; /* Set your desired font size */
+}
+
+.text-ring span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+    rotate(calc(var(--index) * 1turn / var(--total)))
+    translateY(calc(var(--radius, 5) * -1ch));
+}

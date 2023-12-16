@@ -25,3 +25,38 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.text-ring-container {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+}
+
+.text-ring {
+  font-size: 2rem; /* Set your desired font size */
+  position: absolute; /* Changed to absolute positioning */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ring-char {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%)
+    rotate(calc(var(--index) * 1turn / var(--total)))
+    translateY(calc(var(--radius, 5) * -1ch));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ring-char span {
+    animation: spin 3s linear infinite;
+  }
+  @keyframes spin {
+    to {
+      rotate: -360deg;
+    }
+  }
+}

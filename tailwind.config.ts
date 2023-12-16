@@ -17,6 +17,9 @@ const config: Config = {
         tickerbit: ["var(--font-tickerbit)"],
         tiempos: ["var(--font-tiempos)"],
       },
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+      },
     },
   },
   plugins: [],
